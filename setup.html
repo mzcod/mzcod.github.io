@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hi</title>
+    <link rel="icon" href="favicon.png">
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <ul id="nav">
+        <img src="hd.png" id="hd">
+        <a href="index.html">📖 Brief introduction</a>
+        <a href="#">🏗️ Setting up</a>
+        <a href="sp.html">🪄 Special usage</a>
+    </ul>
+    <br>
+    <br>
+    <div class="cont">
+        <h1>
+            <a class="hl">Setting</a> up
+        </h1>
+        <hr class="solid">
+        <div>
+            <h2>Following the <a href="https://www.wireguard.com/quickstart/">official quick start guide</a></h2>
+            <p>It's quite simple, especially in kernels newer than 5.6 with WireGuard built-in.</p>
+        </div>
+        <div>
+            <h2>Docker</h2>
+            <p>Using docker images like <a href="https://hub.docker.com/r/linuxserver/wireguard">linuxserver/wireguard</a> to set up a server, and <a href="https://hub.docker.com/r/kizzx2/wireguard-socks-proxy">kizzx2/wireguard-socks-proxy</a> can let you
+                connect to WireGuard servers as a socks5 proxy. Performance would still be good, as LXC containers share the same kernel with the host.</p>
+        </div>
+        <div>
+            <h2>One-key scripts</h2>
+            <p>Scripts by <a href="https://github.com/atrandys/wireguard">atrandys</a> and <a href="https://github.com/teddysun/across">teddysun</a>.</p>
+        </div>
+        <div>
+            <h2><a href="https://tailscale.com/">Tailscale</a> (based on WireGuard)</h2>Commercial, highly automated solutions for teams work or enterprise.</div>
+    </div>
+</body>
+
+</html>
