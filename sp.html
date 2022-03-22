@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Special usage</title>
+    <link rel="icon" href="favicon.png">
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <ul id="nav">
+        <img src="hd.png" id="hd">
+        <a href="index.html">📖 Brief introduction</a>
+        <a href="setup.html">🏗️ Setting up</a>
+        <a href="#">🪄 Special usage</a>
+    </ul>
+    <br>
+    <br>
+    <div class="cont">
+        <h1>
+            <a class="hl">Special</a> usage
+        </h1>
+        <hr class="solid">
+        <div>
+            <h2>Using with port forwarding</h2>
+            <p>By configuring a port forwarding rule using things like iptables or brook to the origin WireGuard server, it would still work.</p>
+            <p>Useful for bypassing certain limits, like by setting up a forwarding server to <a href="https://engage.cloudflareclient.com/">engage.cloudflareclient.com</a> and using
+                <a href="https://github.com/ViRb3/wgcf">wgcf</a>, it would be easy to bypass region limits on
+                <a href="https://www.netflix.com/"> Netflix.</a>
+            </p>
+        </div>
+        <div>
+            <h2>Encrypted private networking</h2>
+            <p>Considering the fact that WireGuard is a VPN software, it would build a tunnel where you can securely exchange data between two devices under different NATs, just like in the same internal network. It could also be used for wrapping an insecure
+                protocol, benefiting from its strong encryption.</p>
+        </div>
+    </div>
+</body>
+
+</html>
