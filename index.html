@@ -1,78 +1,57 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Hi</title>
-    <link rel="icon" href="favicon.png">
-    <link href="style.css" rel="stylesheet" type="text/css">
 </head>
+<body style="font-family: sans-serif;" onload="alert(Date());func1();" onkeypress="alert('Hi there')">
+	<img id="img1" onmouseover="ch1()" src="https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=SVpsX4fxig-LD-Yc5ha5MA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=80.37611&pitch=0&thumbfov=100">
+	<p id="para" onclick="ch2()">148 Johnson St</p>
+	<p id="para2" onclick="ch3()">2 Johnson St</p>
+	<h1 id="h11">Result:</h1>
+	<button onclick='func2()'>Calculator
+	<p id="h12">Result:</p></button>
+	<button onclick='func3()'>Name</button>
+	<script>
+		var stat = false;
+		var stat2 = false;
 
-<body>
-    <ul id="nav">
-        <img src="hd.png" id="hd">
-        <a href="#">📖 Brief introduction</a>
-        <a href="setup.html">🏗️ Setting up</a>
-        <a href="sp.html">🪄 Special usage</a>
-    </ul>
-    <br>
-    <br>
-    <div class="rows">
-        <h1>
-            A brief introduction to <a class="hl">WireGuard</a>
-        </h1>
-        <hr class="solid">
-        <div class="col">
-            <h2>Properties</h2>
-            <ul>
-                <li>Pure <b>UDP</b> (avoid some disadvantages of TCP-in-TCP)</li>
-                <li>Data encrypted using <b>ChaCha20-Poly1305</b> algorithm (better performance on ARM devices than AES, while slower on x86 devices)</li>
-                <li>Extremely lightweight</li>
-                <li>Integrated in the latest Linux kernel</li>
-            </ul>
-        </div>
-        <div class="col">
-            <h2>Performance</h2>
-            <a class="lnk" href="https://www.wireguard.com/performance/">Performance - WireGuard<br><br></a>
-            <table id="pftb">
-                <p> WireGuard - <a class="hl">1010</a> mbps</p>
-                <p> IPsec (ChaCha20-Poly1305) - <a class="hl">824</a> mbps</p>
-                <p> IPsec (AES-GCM) - <a class="hl">880</a> mbps</p>
-                <p> OpenVPN - <a class="hl">257</a> mbps</p>
-            </table><br>
-            <p>Notes: in this WireGuard official test, a MTU value over <a class="hl">9000</a> is taken, while the usual scenario would be
-                <a class="hl">1500</a> or lower.
-            </p>
-            <br>
-            <br>
-        </div>
-        <div class="col">
-            <h2>My experience</h2>
-            <ul>
-                <li>From school network <b>(Bell Canada)</b> to <b>GCP
-                    (Toronto)</b>: 11 MBps comparing to the 14 MBps speed limit set by school
-                </li>
-                <li>From <b>Jiangsu, China (China Telecom)</b> to <b>BandwagonHost
-                    (US West CN2-GIA)</b>: over 200 MBps comparing to the 300 MBps bandwidth, neen in use since October for Telegram messaging and video calls from my parents, also an Ethereum mining rig.</li>
-            </ul>
-        </div>
-        <div class="col">
-            <h2>Public proxy services</h2>
-            <ul>
-                <li>Cloudflare WARP(<a class="lnk" href="https://1.1.1.1">1.1.1.1</a>) uses BoringTun, which is their implementation of WireGuard in rust.</li>
-                <li>VPN providers like ProtonVPN, Mullvad, VyprVPN and more are providing WireGuard services now.</li>
-            </ul>
-        </div>
-        <div class="col">
-            <h2>Anti-censorship</h2>
-            <ul>
-                <li>Background information: as for real VPN protocols, GFW would detect and block OpenVPN, IPsec, L2TP and many more VPN protocols. They do speed limits on AnyConnect VPN protocol by Cisco instead of blocking it, but block its open source
-                    implementation OpenConnect.
-                </li>
-                <li>No limit is set on WireGuard protocol till now, considering it's rarely used to bypass censorship.</li>
-                <li>However, it's easy to block WireGuard traffic in sensitive periods, comparing to existing anti-censorship solutions that uses real TLS packets.</li>
-            </ul>
-        </div>
-    </div>
+		function ch1() {
+			if(stat){
+    			document.getElementById('img1').src = 'https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=IV1fu-j-iiE70g8F9lS9Ng&cb_client=search.gws-prod.gps&w=408&h=240&yaw=255.07799&pitch=0&thumbfov=100';
+			}
+			else{
+    			document.getElementById('img1').src = 'https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=SVpsX4fxig-LD-Yc5ha5MA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=80.37611&pitch=0&thumbfov=100';
+    		}
+			stat = !stat;
+		}
+
+		function ch2() {
+			if(stat2){
+    			document.getElementById('para').innerHTML = '145 Lemon St';
+			}
+			else{
+    			document.getElementById('para').innerHTML = '148 Johnson St';
+    		}
+			stat2 = !stat2;
+
+		}
+		function ch3(){
+			document.getElementById('para2').style.backgroundColor = 'salmon';
+			document.getElementById('para2').style.fontFamily = 'Arial';
+			document.getElementById('para2').style.textAlign = 'center';
+		}
+		function func1(){
+			document.getElementById('h11').innerHTML = (20 - 32) / 1.8;
+		}
+		function func2(){
+			var a=parseInt(prompt('a:'));
+			var b=parseInt(prompt('b:'));
+			document.getElementById('h12').innerHTML = a + b;
+		}
+		function func3(){
+			var a=prompt('First name:');
+			var b=prompt('Last name:');
+			alert('Nice to meet you ' + a + b);
+		}
+	</script>
 </body>
-
 </html>
